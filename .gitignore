@@ -1,2 +1,6 @@
 *.html
 results/*
+txt_model/*
+*.t7
+checkpoints/*
+

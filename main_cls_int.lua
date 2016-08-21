@@ -9,12 +9,13 @@ require 'nngraph'
 require 'optim'
 
 opt = {
+   personnum = 8000,
    numCaption = 4,
    replicate = 1, -- if 1, then replicate averaged text features numCaption times.
    save_every = 100,
    print_every = 1,
    dataset = 'cub_fast',       -- imagenet / lsun / folder
-   no_aug = 0,
+   no_aug = 1,
    img_dir = '',
    keep_img_frac = 1.0,
    interp_weight = 0,
@@ -24,12 +25,12 @@ opt = {
    data_root = '/home/reedscot/data/cub_files6',
    classnames = '/home/reedscot/data/cub/allclasses.txt',
    trainids = '/home/reedscot/data/cub/allids.txt',
-   checkpoint_dir = '/home/reedscot/checkpoints',
+   checkpoint_dir = '/home/reedscot/checkpoints_noaug',
    numshot = 0,
    batchSize = 64,
-   doc_length = 201,
+   doc_length = 250,
    loadSize = 76,
-   txtSize = 1024,         -- #  of dim for raw text.
+   txtSize = 1000,         -- #  of dim for raw text.
    fineSize = 64,
    nt = 128,               -- #  of dim for text features.
    nz = 100,               -- #  of dim for Z

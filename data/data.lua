@@ -1,10 +1,3 @@
-[[--
-This data loader is a lightly-modified version of the one from dcgan.torch
-(see https://github.com/soumith/dcgan.torch/blob/master/data/data.lua).
-
-If you want to add a new dataset, you can create a new dataset_name and corresponding
-donkey_file that creates minibatches.
---]]
 local Threads = require 'threads'
 Threads.serialization('threads.sharedserialize')
 
@@ -21,7 +14,9 @@ function data.new(n, dataset_name, opt_)
   end
 
   local donkey_file
-  if dataset_name == 'cub' or dataset_name == 'flowers' then
+  if dataset_name == 'person' then
+    donkey_file = 'donkey_folder_person.lua'
+  elseif dataset_name == 'cub' or dataset_name == 'flowers' then
     donkey_file = 'donkey_folder_txt.lua'
   elseif dataset_name == 'coco' then
     donkey_file = 'donkey_folder_coco.lua'
